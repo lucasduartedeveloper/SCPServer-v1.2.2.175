@@ -1,0 +1,13 @@
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.csproj.AssemblyReference.cache
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.csproj.SuggestedBindingRedirects.cache
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.ScpForm.resources
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.Properties.Resources.resources
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.csproj.GenerateResource.cache
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\bin\ScpMapper.xml
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\bin\ScpPair.exe.config
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\bin\ScpPair.exe
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\bin\ScpPair.pdb
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.csproj.CopyComplete
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.exe
+C:\Users\lucas\OneDrive\Desktop\bt_controller\SCP-DS-Driver-Package-1.2.2.175-Source_bkp\ScpServer\Source\ScpPair\obj\Debug\ScpPair.pdb

@@ -234,6 +234,7 @@ namespace ScpControl
                         }
                     }
 
+                    //Global.DisableLED = true;
                     if (Global.DisableLED) m_Report[11] = 0;
 
                     if (!m_Blocked && m_Queued > 0)

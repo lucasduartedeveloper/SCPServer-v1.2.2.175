@@ -34,6 +34,7 @@
             this.chData = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.pnlButton = new System.Windows.Forms.Panel();
+            this.btnSend = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBoth = new System.Windows.Forms.Button();
             this.btnPair = new System.Windows.Forms.Button();
@@ -65,9 +66,11 @@
             this.lvDebug.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvDebug.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDebug.FullRowSelect = true;
+            this.lvDebug.HideSelection = false;
             this.lvDebug.Location = new System.Drawing.Point(0, 0);
+            this.lvDebug.Margin = new System.Windows.Forms.Padding(4);
             this.lvDebug.Name = "lvDebug";
-            this.lvDebug.Size = new System.Drawing.Size(769, 370);
+            this.lvDebug.Size = new System.Drawing.Size(1025, 456);
             this.lvDebug.TabIndex = 0;
             this.lvDebug.UseCompatibleStateImageBehavior = false;
             this.lvDebug.View = System.Windows.Forms.View.Details;
@@ -89,6 +92,7 @@
             // 
             // pnlButton
             // 
+            this.pnlButton.Controls.Add(this.btnSend);
             this.pnlButton.Controls.Add(this.btnClear);
             this.pnlButton.Controls.Add(this.btnBoth);
             this.pnlButton.Controls.Add(this.btnPair);
@@ -98,18 +102,32 @@
             this.pnlButton.Controls.Add(this.btnStop);
             this.pnlButton.Controls.Add(this.btnStart);
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButton.Location = new System.Drawing.Point(0, 476);
+            this.pnlButton.Location = new System.Drawing.Point(0, 586);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(4);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(769, 35);
+            this.pnlButton.Size = new System.Drawing.Size(1025, 43);
             this.pnlButton.TabIndex = 10;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSend.Location = new System.Drawing.Point(585, 7);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(100, 28);
+            this.btnSend.TabIndex = 10;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.Enabled = false;
-            this.btnClear.Location = new System.Drawing.Point(520, 6);
+            this.btnClear.Location = new System.Drawing.Point(693, 7);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(100, 28);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -119,9 +137,10 @@
             // btnBoth
             // 
             this.btnBoth.Enabled = false;
-            this.btnBoth.Location = new System.Drawing.Point(12, 6);
+            this.btnBoth.Location = new System.Drawing.Point(16, 7);
+            this.btnBoth.Margin = new System.Windows.Forms.Padding(4);
             this.btnBoth.Name = "btnBoth";
-            this.btnBoth.Size = new System.Drawing.Size(75, 23);
+            this.btnBoth.Size = new System.Drawing.Size(100, 28);
             this.btnBoth.TabIndex = 3;
             this.btnBoth.Text = "Both";
             this.btnBoth.UseVisualStyleBackColor = true;
@@ -131,9 +150,10 @@
             // btnPair
             // 
             this.btnPair.Enabled = false;
-            this.btnPair.Location = new System.Drawing.Point(336, 6);
+            this.btnPair.Location = new System.Drawing.Point(448, 7);
+            this.btnPair.Margin = new System.Windows.Forms.Padding(4);
             this.btnPair.Name = "btnPair";
-            this.btnPair.Size = new System.Drawing.Size(75, 23);
+            this.btnPair.Size = new System.Drawing.Size(100, 28);
             this.btnPair.TabIndex = 7;
             this.btnPair.Text = "Pair";
             this.btnPair.UseVisualStyleBackColor = true;
@@ -143,9 +163,10 @@
             // btnOff
             // 
             this.btnOff.Enabled = false;
-            this.btnOff.Location = new System.Drawing.Point(255, 6);
+            this.btnOff.Location = new System.Drawing.Point(340, 7);
+            this.btnOff.Margin = new System.Windows.Forms.Padding(4);
             this.btnOff.Name = "btnOff";
-            this.btnOff.Size = new System.Drawing.Size(75, 23);
+            this.btnOff.Size = new System.Drawing.Size(100, 28);
             this.btnOff.TabIndex = 6;
             this.btnOff.Text = "Off";
             this.btnOff.UseVisualStyleBackColor = true;
@@ -155,9 +176,10 @@
             // btnRight
             // 
             this.btnRight.Enabled = false;
-            this.btnRight.Location = new System.Drawing.Point(174, 6);
+            this.btnRight.Location = new System.Drawing.Point(232, 7);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(75, 23);
+            this.btnRight.Size = new System.Drawing.Size(100, 28);
             this.btnRight.TabIndex = 5;
             this.btnRight.Text = "Right";
             this.btnRight.UseVisualStyleBackColor = true;
@@ -167,9 +189,10 @@
             // btnLeft
             // 
             this.btnLeft.Enabled = false;
-            this.btnLeft.Location = new System.Drawing.Point(93, 6);
+            this.btnLeft.Location = new System.Drawing.Point(124, 7);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(75, 23);
+            this.btnLeft.Size = new System.Drawing.Size(100, 28);
             this.btnLeft.TabIndex = 4;
             this.btnLeft.Text = "Left";
             this.btnLeft.UseVisualStyleBackColor = true;
@@ -180,9 +203,10 @@
             // 
             this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(682, 6);
+            this.btnStop.Location = new System.Drawing.Point(909, 7);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(4);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.Size = new System.Drawing.Size(100, 28);
             this.btnStop.TabIndex = 2;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
@@ -192,9 +216,10 @@
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStart.Location = new System.Drawing.Point(601, 6);
+            this.btnStart.Location = new System.Drawing.Point(801, 7);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(100, 28);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -205,9 +230,10 @@
             // 
             this.lblHost.AutoSize = true;
             this.lblHost.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHost.Location = new System.Drawing.Point(12, 9);
+            this.lblHost.Location = new System.Drawing.Point(16, 11);
+            this.lblHost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHost.Name = "lblHost";
-            this.lblHost.Size = new System.Drawing.Size(119, 13);
+            this.lblHost.Size = new System.Drawing.Size(148, 17);
             this.lblHost.TabIndex = 0;
             this.lblHost.Text = "Host Address :";
             // 
@@ -215,9 +241,10 @@
             // 
             this.pnlDebug.Controls.Add(this.lvDebug);
             this.pnlDebug.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDebug.Location = new System.Drawing.Point(0, 106);
+            this.pnlDebug.Location = new System.Drawing.Point(0, 130);
+            this.pnlDebug.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDebug.Name = "pnlDebug";
-            this.pnlDebug.Size = new System.Drawing.Size(769, 370);
+            this.pnlDebug.Size = new System.Drawing.Size(1025, 456);
             this.pnlDebug.TabIndex = 11;
             // 
             // pnlStatus
@@ -226,8 +253,9 @@
             this.pnlStatus.Controls.Add(this.lblHost);
             this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlStatus.Location = new System.Drawing.Point(0, 0);
+            this.pnlStatus.Margin = new System.Windows.Forms.Padding(4);
             this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(769, 106);
+            this.pnlStatus.Size = new System.Drawing.Size(1025, 130);
             this.pnlStatus.TabIndex = 9;
             // 
             // gpPads
@@ -238,9 +266,11 @@
             this.gpPads.Controls.Add(this.rbPad_3);
             this.gpPads.Controls.Add(this.rbPad_2);
             this.gpPads.Controls.Add(this.rbPad_1);
-            this.gpPads.Location = new System.Drawing.Point(300, -4);
+            this.gpPads.Location = new System.Drawing.Point(400, -5);
+            this.gpPads.Margin = new System.Windows.Forms.Padding(4);
             this.gpPads.Name = "gpPads";
-            this.gpPads.Size = new System.Drawing.Size(465, 104);
+            this.gpPads.Padding = new System.Windows.Forms.Padding(4);
+            this.gpPads.Size = new System.Drawing.Size(620, 128);
             this.gpPads.TabIndex = 1;
             this.gpPads.TabStop = false;
             // 
@@ -249,9 +279,10 @@
             this.rbPad_4.AutoSize = true;
             this.rbPad_4.Enabled = false;
             this.rbPad_4.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPad_4.Location = new System.Drawing.Point(6, 79);
+            this.rbPad_4.Location = new System.Drawing.Point(8, 97);
+            this.rbPad_4.Margin = new System.Windows.Forms.Padding(4);
             this.rbPad_4.Name = "rbPad_4";
-            this.rbPad_4.Size = new System.Drawing.Size(185, 17);
+            this.rbPad_4.Size = new System.Drawing.Size(229, 21);
             this.rbPad_4.TabIndex = 3;
             this.rbPad_4.TabStop = true;
             this.rbPad_4.Text = "Pad 4 : Disconnected";
@@ -262,9 +293,10 @@
             this.rbPad_3.AutoSize = true;
             this.rbPad_3.Enabled = false;
             this.rbPad_3.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPad_3.Location = new System.Drawing.Point(6, 56);
+            this.rbPad_3.Location = new System.Drawing.Point(8, 69);
+            this.rbPad_3.Margin = new System.Windows.Forms.Padding(4);
             this.rbPad_3.Name = "rbPad_3";
-            this.rbPad_3.Size = new System.Drawing.Size(185, 17);
+            this.rbPad_3.Size = new System.Drawing.Size(229, 21);
             this.rbPad_3.TabIndex = 2;
             this.rbPad_3.TabStop = true;
             this.rbPad_3.Text = "Pad 3 : Disconnected";
@@ -275,9 +307,10 @@
             this.rbPad_2.AutoSize = true;
             this.rbPad_2.Enabled = false;
             this.rbPad_2.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPad_2.Location = new System.Drawing.Point(6, 33);
+            this.rbPad_2.Location = new System.Drawing.Point(8, 41);
+            this.rbPad_2.Margin = new System.Windows.Forms.Padding(4);
             this.rbPad_2.Name = "rbPad_2";
-            this.rbPad_2.Size = new System.Drawing.Size(185, 17);
+            this.rbPad_2.Size = new System.Drawing.Size(229, 21);
             this.rbPad_2.TabIndex = 1;
             this.rbPad_2.TabStop = true;
             this.rbPad_2.Text = "Pad 2 : Disconnected";
@@ -288,9 +321,10 @@
             this.rbPad_1.AutoSize = true;
             this.rbPad_1.Enabled = false;
             this.rbPad_1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPad_1.Location = new System.Drawing.Point(6, 10);
+            this.rbPad_1.Location = new System.Drawing.Point(8, 12);
+            this.rbPad_1.Margin = new System.Windows.Forms.Padding(4);
             this.rbPad_1.Name = "rbPad_1";
-            this.rbPad_1.Size = new System.Drawing.Size(185, 17);
+            this.rbPad_1.Size = new System.Drawing.Size(229, 21);
             this.rbPad_1.TabIndex = 0;
             this.rbPad_1.TabStop = true;
             this.rbPad_1.Text = "Pad 1 : Disconnected";
@@ -302,13 +336,14 @@
             // 
             // ScpForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 511);
+            this.ClientSize = new System.Drawing.Size(1025, 629);
             this.Controls.Add(this.pnlDebug);
             this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.pnlStatus);
-            this.MinimumSize = new System.Drawing.Size(785, 550);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1041, 666);
             this.Name = "ScpForm";
             this.Text = "SCP Server";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Close);
@@ -347,6 +382,7 @@
         private System.Windows.Forms.RadioButton rbPad_1;
         private System.Windows.Forms.Button btnClear;
         private ScpControl.RootHub rootHub;
+        private System.Windows.Forms.Button btnSend;
     }
 }
 

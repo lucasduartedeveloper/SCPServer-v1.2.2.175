@@ -250,5 +250,9 @@ namespace ScpServer
         {
             ThemeUtil.UpdateFocus(((Button) sender).Handle);
         }
+
+        private void btnSend_Click(object sender, EventArgs e) {
+            ((BthDevice)rootHub.Pad[0]).getDevice().HCI_Remote_Name_Request(rootHub.Pad[0].BD_Address);
+        }
     }
 }

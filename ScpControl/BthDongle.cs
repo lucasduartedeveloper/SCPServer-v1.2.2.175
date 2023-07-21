@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Text;
 using System.Threading;
 
@@ -901,7 +902,7 @@ namespace ScpControl
             return HCI_Command(HCI.Command.HCI_Reject_Connection_Request, Buffer);
         }
 
-        protected virtual Int32 HCI_Remote_Name_Request(Byte[] BD_Addr) 
+        public virtual Int32 HCI_Remote_Name_Request(Byte[] BD_Addr) 
         {
             Byte[] Buffer = new Byte[13];
 
@@ -1435,9 +1436,21 @@ namespace ScpControl
 
             for (int i = 0; i < Data.Length; i++) Buffer[i + 8] = Data[i];
 
+            saveHexadecimal("buffer -> ", Buffer);
+            saveHexadecimal("data -> ", Data);
+
             WriteBulkPipe(Buffer, Data.Length + 8, ref Transfered);
             return Transfered;
         }
         #endregion
+
+        public void saveHexadecimal(string preffix, byte[] command) {
+            var date = DateTime.Now;
+            var fullPath = "C:\\Users\\lucas\\OneDrive\\Desktop\\rumble-command.txt";
+            var hexadecimal = BitConverter.ToString(command);
+            using (StreamWriter writer = new StreamWriter(fullPath, true)) {
+                writer.WriteLine("["+date.ToString("dd/MM/yyyy HH:mm:ss")+"] "+preffix+hexadecimal);
+            }
+        }
     }
 }

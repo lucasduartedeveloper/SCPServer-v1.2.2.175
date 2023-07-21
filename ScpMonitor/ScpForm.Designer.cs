@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScpForm));
             this.lblHost = new System.Windows.Forms.Label();
             this.lblPad_1 = new System.Windows.Forms.Label();
             this.lblPad_2 = new System.Windows.Forms.Label();
@@ -51,19 +52,22 @@
             // 
             this.lblHost.AutoSize = true;
             this.lblHost.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHost.Location = new System.Drawing.Point(10, 10);
+            this.lblHost.Location = new System.Drawing.Point(13, 12);
+            this.lblHost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHost.Name = "lblHost";
-            this.lblHost.Size = new System.Drawing.Size(223, 13);
+            this.lblHost.Size = new System.Drawing.Size(278, 17);
             this.lblHost.TabIndex = 1;
             this.lblHost.Text = "Host Address : Disconnected";
+            this.lblHost.Click += new System.EventHandler(this.lblHost_Click);
             // 
             // lblPad_1
             // 
             this.lblPad_1.AutoSize = true;
             this.lblPad_1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPad_1.Location = new System.Drawing.Point(320, 10);
+            this.lblPad_1.Location = new System.Drawing.Point(427, 12);
+            this.lblPad_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPad_1.Name = "lblPad_1";
-            this.lblPad_1.Size = new System.Drawing.Size(167, 13);
+            this.lblPad_1.Size = new System.Drawing.Size(208, 17);
             this.lblPad_1.TabIndex = 2;
             this.lblPad_1.Text = "Pad 1 : Disconnected";
             // 
@@ -71,9 +75,10 @@
             // 
             this.lblPad_2.AutoSize = true;
             this.lblPad_2.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPad_2.Location = new System.Drawing.Point(320, 35);
+            this.lblPad_2.Location = new System.Drawing.Point(427, 43);
+            this.lblPad_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPad_2.Name = "lblPad_2";
-            this.lblPad_2.Size = new System.Drawing.Size(167, 13);
+            this.lblPad_2.Size = new System.Drawing.Size(208, 17);
             this.lblPad_2.TabIndex = 3;
             this.lblPad_2.Text = "Pad 2 : Disconnected";
             // 
@@ -81,9 +86,10 @@
             // 
             this.lblPad_3.AutoSize = true;
             this.lblPad_3.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPad_3.Location = new System.Drawing.Point(320, 60);
+            this.lblPad_3.Location = new System.Drawing.Point(427, 74);
+            this.lblPad_3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPad_3.Name = "lblPad_3";
-            this.lblPad_3.Size = new System.Drawing.Size(167, 13);
+            this.lblPad_3.Size = new System.Drawing.Size(208, 17);
             this.lblPad_3.TabIndex = 4;
             this.lblPad_3.Text = "Pad 3 : Disconnected";
             // 
@@ -91,9 +97,10 @@
             // 
             this.lblPad_4.AutoSize = true;
             this.lblPad_4.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPad_4.Location = new System.Drawing.Point(320, 85);
+            this.lblPad_4.Location = new System.Drawing.Point(427, 105);
+            this.lblPad_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPad_4.Name = "lblPad_4";
-            this.lblPad_4.Size = new System.Drawing.Size(167, 13);
+            this.lblPad_4.Size = new System.Drawing.Size(208, 17);
             this.lblPad_4.TabIndex = 5;
             this.lblPad_4.Text = "Pad 4 : Disconnected";
             // 
@@ -112,19 +119,20 @@
             // 
             // cmTray
             // 
+            this.cmTray.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tmConfig,
             this.tmProfile,
             this.tmReset,
             this.tmExit});
             this.cmTray.Name = "cmTray";
-            this.cmTray.Size = new System.Drawing.Size(159, 92);
+            this.cmTray.Size = new System.Drawing.Size(185, 100);
             // 
             // tmConfig
             // 
             this.tmConfig.Enabled = false;
             this.tmConfig.Name = "tmConfig";
-            this.tmConfig.Size = new System.Drawing.Size(158, 22);
+            this.tmConfig.Size = new System.Drawing.Size(184, 24);
             this.tmConfig.Text = "&Configuration";
             this.tmConfig.Click += new System.EventHandler(this.tmConfig_Click);
             // 
@@ -132,30 +140,31 @@
             // 
             this.tmProfile.Enabled = false;
             this.tmProfile.Name = "tmProfile";
-            this.tmProfile.Size = new System.Drawing.Size(158, 22);
+            this.tmProfile.Size = new System.Drawing.Size(184, 24);
             this.tmProfile.Text = "&Profile Manager";
             this.tmProfile.Click += new System.EventHandler(this.tmProfile_Click);
             // 
             // tmReset
             // 
             this.tmReset.Name = "tmReset";
-            this.tmReset.Size = new System.Drawing.Size(158, 22);
+            this.tmReset.Size = new System.Drawing.Size(184, 24);
             this.tmReset.Text = "&Reset Position";
             this.tmReset.Click += new System.EventHandler(this.tmReset_Click);
             // 
             // tmExit
             // 
             this.tmExit.Name = "tmExit";
-            this.tmExit.Size = new System.Drawing.Size(158, 22);
+            this.tmExit.Size = new System.Drawing.Size(184, 24);
             this.tmExit.Text = "E&xit";
             this.tmExit.Click += new System.EventHandler(this.tmExit_Click);
             // 
             // btnUp_1
             // 
             this.btnUp_1.Enabled = false;
-            this.btnUp_1.Location = new System.Drawing.Point(294, 29);
+            this.btnUp_1.Location = new System.Drawing.Point(392, 36);
+            this.btnUp_1.Margin = new System.Windows.Forms.Padding(4);
             this.btnUp_1.Name = "btnUp_1";
-            this.btnUp_1.Size = new System.Drawing.Size(20, 23);
+            this.btnUp_1.Size = new System.Drawing.Size(27, 28);
             this.btnUp_1.TabIndex = 6;
             this.btnUp_1.Tag = "1";
             this.btnUp_1.Text = "^";
@@ -166,9 +175,10 @@
             // btnUp_2
             // 
             this.btnUp_2.Enabled = false;
-            this.btnUp_2.Location = new System.Drawing.Point(294, 54);
+            this.btnUp_2.Location = new System.Drawing.Point(392, 66);
+            this.btnUp_2.Margin = new System.Windows.Forms.Padding(4);
             this.btnUp_2.Name = "btnUp_2";
-            this.btnUp_2.Size = new System.Drawing.Size(20, 23);
+            this.btnUp_2.Size = new System.Drawing.Size(27, 28);
             this.btnUp_2.TabIndex = 7;
             this.btnUp_2.Tag = "2";
             this.btnUp_2.Text = "^";
@@ -179,9 +189,10 @@
             // btnUp_3
             // 
             this.btnUp_3.Enabled = false;
-            this.btnUp_3.Location = new System.Drawing.Point(294, 79);
+            this.btnUp_3.Location = new System.Drawing.Point(392, 97);
+            this.btnUp_3.Margin = new System.Windows.Forms.Padding(4);
             this.btnUp_3.Name = "btnUp_3";
-            this.btnUp_3.Size = new System.Drawing.Size(20, 23);
+            this.btnUp_3.Size = new System.Drawing.Size(27, 28);
             this.btnUp_3.TabIndex = 8;
             this.btnUp_3.Tag = "3";
             this.btnUp_3.Text = "^";
@@ -191,10 +202,10 @@
             // 
             // ScpForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(734, 111);
+            this.ClientSize = new System.Drawing.Size(979, 137);
             this.Controls.Add(this.btnUp_3);
             this.Controls.Add(this.btnUp_2);
             this.Controls.Add(this.btnUp_1);
@@ -205,6 +216,8 @@
             this.Controls.Add(this.lblHost);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ScpForm";

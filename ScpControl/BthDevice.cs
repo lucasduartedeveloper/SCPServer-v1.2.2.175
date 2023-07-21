@@ -76,7 +76,9 @@ namespace ScpControl
                 Debug(this, args);
             }
         }
-
+        public BthDongle getDevice() {
+            return (BthDongle)m_Device;
+        }
 
         public BthDevice() 
         {

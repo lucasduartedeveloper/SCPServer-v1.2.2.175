@@ -39,7 +39,8 @@ namespace ScpMonitor
             m_Server.Client.ReceiveTimeout = 250;
             m_Buffer[1] = 0x02;
 
-            FormVisible = m_Config.Visible;
+            FormVisible = true;
+            //FormVisible = m_Config.Visible;
 
             FormSaved = m_Config.FormSaved;
             FormX = m_Config.FormX;
@@ -206,6 +207,10 @@ namespace ScpMonitor
             //Icon = niTray.Icon = Properties.Resources.Scp_All;
 
             tmrUpdate.Enabled = true;
+        }
+
+        private void lblHost_Click(object sender, EventArgs e) {
+            tmConfig_Click(sender, e);
         }
 
         protected void Form_Closing(object sender, FormClosingEventArgs e) 

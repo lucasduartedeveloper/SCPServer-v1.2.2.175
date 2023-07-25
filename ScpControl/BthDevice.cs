@@ -187,12 +187,17 @@ namespace ScpControl
 
                 case DsState.Connected:
 
-                    return String.Format("Pad {0} : {1} {2} - {3} {4:X8} {5}", m_ControllerId + 1, Model,
+                    /*return String.Format("Pad {0} : {1} {2} - {3} {4:X8} {5}", m_ControllerId + 1, Model,
                         Local,
                         Connection,
                         m_Packet,
                         Battery
-                        );
+                        );*/
+
+                    return String.Format("Pad {0} : {1} {2} - {3} {4:X8}", m_ControllerId + 1, Model,
+                        Local,
+                        Connection,
+                        m_Packet);
             }
 
             throw new Exception();

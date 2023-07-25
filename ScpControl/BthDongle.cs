@@ -1420,7 +1420,12 @@ namespace ScpControl
         #endregion
 
         #region HIDP Commands
-        public virtual Int32 HID_Command(Byte[] Handle, Byte[] Channel, Byte[] Data) 
+        public virtual Int32 HID_Command(Byte[] Handle, Byte[] Channel, Byte[] Data) {
+            return HID_Command(Handle, Channel, Data, false);
+        }
+
+        // Find correct command to activate gamepad rumble
+        public virtual Int32 HID_Command(Byte[] Handle, Byte[] Channel, Byte[] Data, bool rumble) 
         {
             Int32 Transfered = 0;
             Byte[] Buffer = new Byte[Data.Length + 8];
@@ -1436,8 +1441,10 @@ namespace ScpControl
 
             for (int i = 0; i < Data.Length; i++) Buffer[i + 8] = Data[i];
 
-            saveHexadecimal("buffer -> ", Buffer);
-            saveHexadecimal("data -> ", Data);
+            if (rumble) {
+                saveHexadecimal("buffer -> ", Buffer);
+                saveHexadecimal("data -> ", Data);
+            }
 
             WriteBulkPipe(Buffer, Data.Length + 8, ref Transfered);
             return Transfered;

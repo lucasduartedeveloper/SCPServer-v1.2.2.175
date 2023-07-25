@@ -5,6 +5,8 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 
 using ScpControl;
+using ScpServer.Properties;
+using System.Media;
 
 namespace ScpServer 
 {
@@ -210,6 +212,10 @@ namespace ScpServer
             base.WndProc(ref m);
         }
 
+        bool pad1_lastState = false;
+        SoundPlayer connect_sound = new SoundPlayer("C:\\Users\\lucas\\OneDrive\\Desktop\\battery_icon\\bth_connect.wav");
+        SoundPlayer disconnect_sound = new SoundPlayer("C:\\Users\\lucas\\OneDrive\\Desktop\\battery_icon\\bth_disconnect.wav");
+
         protected void tmrUpdate_Tick(object sender, EventArgs e) 
         {
             Boolean bSelected = false, bDisconnect = false, bPair = false;
@@ -220,12 +226,47 @@ namespace ScpServer
             {
                 Pad[Index].Text    = rootHub.Pad[Index].ToString();
                 Pad[Index].Enabled = rootHub.Pad[Index].State == DsState.Connected;
-                Pad[Index].Checked = Pad[Index].Enabled && Pad[Index].Checked;
+                Pad[Index].Checked = Pad[Index].Enabled; // && Pad[Index].Checked;
+
+                if (Index == 0 && Pad[Index].Enabled) {
+                    switch (rootHub.Pad[Index].Battery) {
+                        case DsBattery.None:
+                            pad1_battery.BackgroundImage = Resources.battery_none;
+                            break;
+                        case DsBattery.Dieing:
+                            pad1_battery.BackgroundImage = Resources.battery_dieing;
+                            break;
+                        case DsBattery.Low:
+                            pad1_battery.BackgroundImage = Resources.battery_low;
+                            break;
+                        case DsBattery.Medium:
+                            pad1_battery.BackgroundImage = Resources.battery_medium;
+                            break;
+                        case DsBattery.High:
+                            pad1_battery.BackgroundImage = Resources.battery_high;
+                            break;
+                        case DsBattery.Full:
+                            pad1_battery.BackgroundImage = Resources.battery_full;
+                            break;
+                    }
+                    pad1_battery.Visible = true;
+                }
+                else if (Index == 0) {
+                    pad1_battery.Visible = false;
+                }
 
                 bSelected   = bSelected   || Pad[Index].Checked;
                 bDisconnect = bDisconnect || rootHub.Pad[Index].Connection == DsConnection.BTH;
 
                 bPair = bPair || (Pad[Index].Checked && rootHub.Pad[Index].Connection == DsConnection.USB && rootHub.Master != rootHub.Pad[Index].Remote);
+
+                if (!pad1_lastState && Pad[Index].Enabled) {
+                    connect_sound.Play();
+                }
+                else if (pad1_lastState && !Pad[Index].Enabled) {
+                    disconnect_sound.Play();
+                }
+                if (Index == 0) pad1_lastState = Pad[Index].Enabled;
             }
 
             btnBoth.Enabled = btnLeft.Enabled = btnRight.Enabled = btnOff.Enabled = bSelected && btnStop.Enabled;

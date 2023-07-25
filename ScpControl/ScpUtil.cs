@@ -339,6 +339,8 @@ namespace ScpControl
         Int32 HCI_Disconnect(BthHandle Handle);
 
         Int32 HID_Command(Byte[] Handle, Byte[] Channel, Byte[] Data);
+
+        Int32 HID_Command(Byte[] Handle, Byte[] Channel, Byte[] Data, bool rumble);
     }
         
     public class BthHandle : IEquatable<BthHandle>, IComparable<BthHandle> 

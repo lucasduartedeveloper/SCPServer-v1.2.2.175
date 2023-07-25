@@ -121,4 +121,25 @@
   <data name="Scp_All" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Scp_All.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="battery_dieing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_dieing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_high.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_low.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_medium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_medium2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_medium2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_none" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_none.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

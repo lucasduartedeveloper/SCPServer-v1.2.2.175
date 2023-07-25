@@ -67,6 +67,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\CommonInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ScpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +86,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ScpForm.resx">
       <DependentUpon>ScpForm.cs</DependentUpon>
@@ -103,6 +109,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\battery_dieing.png" />
+    <None Include="Resources\battery_full.png" />
+    <None Include="Resources\battery_high.png" />
+    <None Include="Resources\battery_low.png" />
+    <None Include="Resources\battery_medium.png" />
+    <None Include="Resources\battery_medium2.png" />
+    <None Include="Resources\battery_none.png" />
     <Content Include="Resources\Scp_All.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

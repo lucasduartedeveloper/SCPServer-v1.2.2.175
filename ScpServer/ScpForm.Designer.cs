@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScpForm));
             this.lvDebug = new System.Windows.Forms.ListView();
             this.chTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chData = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,6 +48,7 @@
             this.pnlDebug = new System.Windows.Forms.Panel();
             this.pnlStatus = new System.Windows.Forms.Panel();
             this.gpPads = new System.Windows.Forms.GroupBox();
+            this.pad1_battery = new System.Windows.Forms.Panel();
             this.rbPad_4 = new System.Windows.Forms.RadioButton();
             this.rbPad_3 = new System.Windows.Forms.RadioButton();
             this.rbPad_2 = new System.Windows.Forms.RadioButton();
@@ -230,6 +232,7 @@
             // 
             this.lblHost.AutoSize = true;
             this.lblHost.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHost.ForeColor = System.Drawing.SystemColors.Control;
             this.lblHost.Location = new System.Drawing.Point(16, 11);
             this.lblHost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHost.Name = "lblHost";
@@ -249,6 +252,7 @@
             // 
             // pnlStatus
             // 
+            this.pnlStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.pnlStatus.Controls.Add(this.gpPads);
             this.pnlStatus.Controls.Add(this.lblHost);
             this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Top;
@@ -262,10 +266,13 @@
             // 
             this.gpPads.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gpPads.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.gpPads.Controls.Add(this.pad1_battery);
             this.gpPads.Controls.Add(this.rbPad_4);
             this.gpPads.Controls.Add(this.rbPad_3);
             this.gpPads.Controls.Add(this.rbPad_2);
             this.gpPads.Controls.Add(this.rbPad_1);
+            this.gpPads.ForeColor = System.Drawing.SystemColors.Control;
             this.gpPads.Location = new System.Drawing.Point(400, -5);
             this.gpPads.Margin = new System.Windows.Forms.Padding(4);
             this.gpPads.Name = "gpPads";
@@ -273,6 +280,17 @@
             this.gpPads.Size = new System.Drawing.Size(620, 128);
             this.gpPads.TabIndex = 1;
             this.gpPads.TabStop = false;
+            // 
+            // pad1_battery
+            // 
+            this.pad1_battery.BackColor = System.Drawing.Color.Transparent;
+            this.pad1_battery.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pad1_battery.BackgroundImage")));
+            this.pad1_battery.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pad1_battery.Location = new System.Drawing.Point(528, 8);
+            this.pad1_battery.Name = "pad1_battery";
+            this.pad1_battery.Size = new System.Drawing.Size(90, 40);
+            this.pad1_battery.TabIndex = 4;
+            this.pad1_battery.Visible = false;
             // 
             // rbPad_4
             // 
@@ -321,6 +339,7 @@
             this.rbPad_1.AutoSize = true;
             this.rbPad_1.Enabled = false;
             this.rbPad_1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPad_1.ForeColor = System.Drawing.SystemColors.Control;
             this.rbPad_1.Location = new System.Drawing.Point(8, 12);
             this.rbPad_1.Margin = new System.Windows.Forms.Padding(4);
             this.rbPad_1.Name = "rbPad_1";
@@ -383,6 +402,7 @@
         private System.Windows.Forms.Button btnClear;
         private ScpControl.RootHub rootHub;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Panel pad1_battery;
     }
 }
 

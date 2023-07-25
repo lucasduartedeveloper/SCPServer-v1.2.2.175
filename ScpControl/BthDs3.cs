@@ -185,7 +185,7 @@ namespace ScpControl
                 {
                     m_Last = DateTime.Now; m_Blocked = true;
 
-                    m_Device.HID_Command(HCI_Handle.Bytes, Get_SCID(L2CAP.PSM.HID_Command), m_Report);
+                    m_Device.HID_Command(HCI_Handle.Bytes, Get_SCID(L2CAP.PSM.HID_Command), m_Report, true);
                 }
                 else
                 {

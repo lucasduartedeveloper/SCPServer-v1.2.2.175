@@ -142,4 +142,22 @@
   <data name="battery_none" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\battery_none.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="battery_resized_dieing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_resized_dieing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_resized_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_resized_full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_resized_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_resized_high.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_resized_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_resized_low.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_resized_medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_resized_medium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_resized_none" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battery_resized_none.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

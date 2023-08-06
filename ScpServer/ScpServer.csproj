@@ -116,6 +116,12 @@
     <None Include="Resources\battery_medium.png" />
     <None Include="Resources\battery_medium2.png" />
     <None Include="Resources\battery_none.png" />
+    <None Include="Resources\battery_resized_dieing.png" />
+    <None Include="Resources\battery_resized_full.png" />
+    <None Include="Resources\battery_resized_high.png" />
+    <None Include="Resources\battery_resized_low.png" />
+    <None Include="Resources\battery_resized_medium.png" />
+    <None Include="Resources\battery_resized_none.png" />
     <Content Include="Resources\Scp_All.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

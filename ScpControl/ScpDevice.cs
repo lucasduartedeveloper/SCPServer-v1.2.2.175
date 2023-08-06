@@ -5,6 +5,8 @@ using System.Windows.Forms;
 
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
+using System.IO;
+using System.Data;
 
 namespace ScpControl 
 {
@@ -157,7 +159,18 @@ namespace ScpControl
             Setup.Index       = 0;
             Setup.Length      = (UInt16) Buffer.Length;
 
+            saveHexadecimal("USB buffer -> ", Buffer);
+
             return WinUsb_ControlTransfer(m_WinUsbHandle, Setup, Buffer, Buffer.Length, ref Transfered, IntPtr.Zero);
+        }
+
+        public void saveHexadecimal(string preffix, byte[] command) {
+            var date = DateTime.Now;
+            var fullPath = "C:\\Users\\lucas\\OneDrive\\Desktop\\rumble-command.txt";
+            var hexadecimal = BitConverter.ToString(command).Replace("-", "");
+            using (StreamWriter writer = new StreamWriter(fullPath, true)) {
+                writer.WriteLine("[" + date.ToString("dd/MM/yyyy HH:mm:ss") + "] " + preffix + hexadecimal);
+            }
         }
 
 

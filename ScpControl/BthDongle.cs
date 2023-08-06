@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
 
@@ -1442,19 +1443,27 @@ namespace ScpControl
             for (int i = 0; i < Data.Length; i++) Buffer[i + 8] = Data[i];
 
             if (rumble) {
-                saveHexadecimal("buffer -> ", Buffer);
-                saveHexadecimal("data -> ", Data);
+                saveHexadecimal("BTH buffer -> ", Buffer);
+                saveHexadecimal("BTH data   -> ", Data);
             }
 
-            WriteBulkPipe(Buffer, Data.Length + 8, ref Transfered);
+            WriteBulkPipe(Buffer, Buffer.Length, ref Transfered);
+            //WriteBulkPipe(Buffer, Data.Length + 8, ref Transfered);
             return Transfered;
         }
         #endregion
 
+        public static byte[] StringToByteArray(string hex) {
+            return Enumerable.Range(0, hex.Length)
+                             .Where(x => x % 2 == 0)
+                             .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+                             .ToArray();
+        }
+
         public void saveHexadecimal(string preffix, byte[] command) {
             var date = DateTime.Now;
             var fullPath = "C:\\Users\\lucas\\OneDrive\\Desktop\\rumble-command.txt";
-            var hexadecimal = BitConverter.ToString(command);
+            var hexadecimal = BitConverter.ToString(command).Replace("-", "");
             using (StreamWriter writer = new StreamWriter(fullPath, true)) {
                 writer.WriteLine("["+date.ToString("dd/MM/yyyy HH:mm:ss")+"] "+preffix+hexadecimal);
             }

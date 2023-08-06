@@ -7,6 +7,10 @@ using System.Reflection;
 using ScpControl;
 using ScpServer.Properties;
 using System.Media;
+using System.Net.WebSockets;
+using System.Security.Policy;
+using System.Threading;
+using System.Text;
 
 namespace ScpServer 
 {
@@ -229,26 +233,34 @@ namespace ScpServer
                 Pad[Index].Checked = Pad[Index].Enabled; // && Pad[Index].Checked;
 
                 if (Index == 0 && Pad[Index].Enabled) {
+                    var battery = 5;
                     switch (rootHub.Pad[Index].Battery) {
                         case DsBattery.None:
-                            pad1_battery.BackgroundImage = Resources.battery_none;
+                            battery = 0;
+                            pad1_battery.BackgroundImage = Resources.battery_resized_none;
                             break;
                         case DsBattery.Dieing:
-                            pad1_battery.BackgroundImage = Resources.battery_dieing;
+                            battery = 1;
+                            pad1_battery.BackgroundImage = Resources.battery_resized_dieing;
                             break;
                         case DsBattery.Low:
-                            pad1_battery.BackgroundImage = Resources.battery_low;
+                            battery = 2;
+                            pad1_battery.BackgroundImage = Resources.battery_resized_low;
                             break;
                         case DsBattery.Medium:
-                            pad1_battery.BackgroundImage = Resources.battery_medium;
+                            battery = 3;
+                            pad1_battery.BackgroundImage = Resources.battery_resized_medium;
                             break;
                         case DsBattery.High:
-                            pad1_battery.BackgroundImage = Resources.battery_high;
+                            battery = 4;
+                            pad1_battery.BackgroundImage = Resources.battery_resized_high;
                             break;
                         case DsBattery.Full:
-                            pad1_battery.BackgroundImage = Resources.battery_full;
+                            battery = 5;
+                            pad1_battery.BackgroundImage = Resources.battery_resized_full;
                             break;
                     }
+                    updateBatteryIndicator(battery);
                     pad1_battery.Visible = true;
                 }
                 else if (Index == 0) {
@@ -281,6 +293,20 @@ namespace ScpServer
             LogDebug(e.Time, e.Data);
         }
 
+        ClientWebSocket webSocket = new ClientWebSocket();
+        string webSocket_address = "ws://192.168.15.6:3000";
+        int last_battery = 0;
+        protected async void updateBatteryIndicator(int battery) {
+            if (battery == last_battery) return;
+            if (webSocket.State != WebSocketState.Open) {
+                await webSocket.ConnectAsync(new Uri(webSocket_address), CancellationToken.None);
+            }
+            var message = "PAPER|scp-server|remote-gamepad-battery|" + battery;
+            var bytes = Encoding.ASCII.GetBytes(message);
+            var segment = new ArraySegment<byte>(bytes);
+            await webSocket.SendAsync(segment, WebSocketMessageType.Text, true, CancellationToken.None);
+        } 
+
 
         protected void lvDebug_Enter(object sender, EventArgs e) 
         {
@@ -292,8 +318,10 @@ namespace ScpServer
             ThemeUtil.UpdateFocus(((Button) sender).Handle);
         }
 
-        private void btnSend_Click(object sender, EventArgs e) {
-            ((BthDevice)rootHub.Pad[0]).getDevice().HCI_Remote_Name_Request(rootHub.Pad[0].BD_Address);
+        private void btnReinstall_Click(object sender, EventArgs e) {
+
+
+            //((BthDevice)rootHub.Pad[0]).getDevice().HCI_Remote_Name_Request(rootHub.Pad[0].BD_Address);
         }
     }
 }

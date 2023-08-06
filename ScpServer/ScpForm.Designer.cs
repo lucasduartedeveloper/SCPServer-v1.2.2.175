@@ -113,14 +113,19 @@
             // btnSend
             // 
             this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSend.BackColor = System.Drawing.Color.Brown;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSend.Font = new System.Drawing.Font("Showcard Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSend.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSend.Location = new System.Drawing.Point(585, 7);
             this.btnSend.Margin = new System.Windows.Forms.Padding(4);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(100, 28);
             this.btnSend.TabIndex = 10;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            this.btnSend.Text = "Reinstall";
+            this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Visible = false;
+            this.btnSend.Click += new System.EventHandler(this.btnReinstall_Click);
             // 
             // btnClear
             // 
@@ -286,9 +291,9 @@
             this.pad1_battery.BackColor = System.Drawing.Color.Transparent;
             this.pad1_battery.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pad1_battery.BackgroundImage")));
             this.pad1_battery.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pad1_battery.Location = new System.Drawing.Point(528, 8);
+            this.pad1_battery.Location = new System.Drawing.Point(551, 3);
             this.pad1_battery.Name = "pad1_battery";
-            this.pad1_battery.Size = new System.Drawing.Size(90, 40);
+            this.pad1_battery.Size = new System.Drawing.Size(68, 40);
             this.pad1_battery.TabIndex = 4;
             this.pad1_battery.Visible = false;
             // 
